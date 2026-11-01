@@ -1,0 +1,92 @@
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/inter';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import 'tailwindcss';
+
+@theme {
+  --color-midnight: #071622;
+  --color-ocean: #0c2532;
+  --color-teal: #16d6bc;
+  --color-cyan: #57c8e8;
+  --color-mist: #eaf7f6;
+  --color-ice: #f7fbfd;
+  --color-slate: #8fa9b6;
+  --color-amber: #f5bd67;
+  --color-coral: #ef7479;
+  --font-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+}
+
+:root {
+  color-scheme: dark;
+  --line: rgba(143, 169, 182, 0.18);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0;
+  background: var(--color-midnight);
+  color: var(--color-ice);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+h1, h2, h3, .font-display { font-family: var(--font-display); letter-spacing: -0.02em; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+:focus-visible { outline: 2px solid var(--color-teal); outline-offset: 3px; border-radius: 6px; }
+
+.sci-grid {
+  background-image:
+    linear-gradient(to right, rgba(87, 200, 232, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(87, 200, 232, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+}
+
+.glass {
+  background: linear-gradient(160deg, rgba(20, 52, 68, 0.62), rgba(10, 30, 42, 0.55));
+  border: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+}
+.panel { background: var(--color-ocean); border: 1px solid var(--line); border-radius: 18px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-teal); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center;
+  padding: 0.75rem 1.25rem; border-radius: 999px; font-weight: 600; font-size: 0.95rem;
+  transition: transform 0.2s ease, background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer; border: 1px solid transparent; min-height: 44px;
+}
+.btn-primary { background: var(--color-teal); color: #04202a; box-shadow: 0 8px 30px -8px rgba(22,214,188,.55); }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 36px -6px rgba(22,214,188,.7); }
+.btn-ghost { border-color: rgba(143,169,182,.35); color: var(--color-ice); background: rgba(7,22,34,.4); }
+.btn-ghost:hover { border-color: var(--color-teal); color: var(--color-teal); }
+.btn-sm { padding: 0.5rem 0.9rem; font-size: 0.85rem; min-height: 38px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; }
+
+input[type='range'] { accent-color: var(--color-teal); width: 100%; min-height: 28px; }
+select, input[type='number'], input[type='date'], input[type='text'] {
+  background: #0a1d2a; border: 1px solid var(--line); border-radius: 10px; color: var(--color-ice);
+  padding: 0.55rem 0.7rem; min-height: 42px; font-family: var(--font-mono); font-size: 0.9rem;
+}
+
+.chip { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; padding: .25rem .6rem; border-radius: 999px; border: 1px solid var(--line); }
+
+@keyframes pulse-ring { 0% { transform: scale(.9); opacity: .8 } 100% { transform: scale(1.8); opacity: 0 } }
+.pulse-dot::after { content:''; position:absolute; inset:0; border-radius:999px; background: currentColor; animation: pulse-ring 2s ease-out infinite; }
+
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.skip-link { position:absolute; left:-999px; top:8px; background: var(--color-teal); color:#04202a; padding:.6rem 1rem; border-radius:8px; z-index:100; font-weight:600; }
+.skip-link:focus { left: 12px; }
+
+.recharts-cartesian-axis-tick-value { font-family: var(--font-mono); font-size: 11px; fill: var(--color-slate); }

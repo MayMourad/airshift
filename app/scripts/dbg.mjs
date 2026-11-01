@@ -1,0 +1,13 @@
+import { chromium } from 'playwright'
+const b = await chromium.launch({ channel: 'msedge', args: ['--ignore-gpu-blocklist', '--enable-unsafe-swiftshader'] })
+const p = await (await b.newContext({ viewport: { width: 1440, height: 900 } })).newPage()
+p.on('console', (m) => console.log('console', m.type(), m.text()))
+p.on('pageerror', (e) => console.log('pageerror', e.message))
+await p.goto('http://localhost:4173', { waitUntil: 'networkidle' })
+await p.evaluate(() => window.scrollTo(0, document.getElementById('replicate').offsetTop + 1500))
+await p.waitForTimeout(1500)
+await p.evaluate(() => document.querySelector('#replicate canvas').scrollIntoView({ block: 'center' }))
+await p.waitForTimeout(3000)
+console.log(await p.evaluate(() => { const c = document.querySelector('#replicate canvas'); return c ? [c.width, c.height, c.style.width, c.getBoundingClientRect().y] : 'none' }))
+await p.screenshot({ path: process.env.TEMP + '/globe.png' })
+await b.close()
