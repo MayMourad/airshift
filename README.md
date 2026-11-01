@@ -1,5 +1,6 @@
 # AIRSHIFT
-n**Live demo:** https://maymourad.github.io/airshift/ (all data simulated; deployed from `main` by `.github/workflows/deploy.yml`)
+
+**Live demo:** https://maymourad.github.io/airshift/ (all data simulated; deployed from `main` by `.github/workflows/deploy.yml`)
 
 **Making the Invisible Visible. Turning Awareness into Action.**
 
