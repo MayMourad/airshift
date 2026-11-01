@@ -166,7 +166,7 @@ const bullets = (items, o = {}) => items.map((x) => ({ text: x, options: { bulle
   t(s, 'BUILT WITH', 9.8, 4.2, 2.8, 0.25, { fontFace: F.mono, fontSize: 9, color: C.teal, charSpacing: 2 })
   t(s, 'React, TypeScript, Vite, Three.js, Recharts. Offline, no API keys. Keyboard accessible, reduced-motion aware, responsive.', 9.8, 4.47, 2.8, 0.95, { fontSize: 9.5, color: C.soft })
   card(s, 9.8, 5.6, 2.75, 0.95, { line: C.amber, fill: C.amber, transparency: 90 })
-  t(s, [{ text: 'LIVE DEMO', options: { fontFace: F.mono, fontSize: 8.5, color: C.amber, bold: true, breakLine: true } }, { text: '[URL to be added after publishing]', options: { fontFace: F.mono, fontSize: 8.5, color: C.ice } }], 9.92, 5.6, 2.55, 0.95, { valign: 'middle' })
+  t(s, [{ text: 'LIVE DEMO', options: { fontFace: F.mono, fontSize: 8.5, color: C.amber, bold: true, breakLine: true } }, { text: 'maymourad.github.io/airshift', options: { fontFace: F.mono, fontSize: 8.5, color: C.ice } }], 9.92, 5.6, 2.55, 0.95, { valign: 'middle' })
 }
 
 /* 7 — Project structure */

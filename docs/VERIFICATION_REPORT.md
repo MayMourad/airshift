@@ -14,7 +14,7 @@ Scope: the prototype in `app/`, the deck in `deck/`, and the statements in both.
 | Deck | 10 slides, 16:9, PPTX + PDF, speaker notes on every slide, fonts embedded in the PDF |
 | Problem statement | 207 words (target ≈ 200) |
 | Mission statement | 45 words (target ≈ 50) |
-| Published anywhere | **No.** Nothing was uploaded, pushed or deployed |
+| Published | Yes, on 1 Nov 2026: public repo https://github.com/MayMourad/airshift and GitHub Pages https://maymourad.github.io/airshift/ |
 
 ## 2. What was tested, and how
 
@@ -80,7 +80,7 @@ The synthetic dataset is generated from the same mass-balance model as the Air L
 - **Browser storage:** only the checklist ticks use `localStorage`, wrapped in try/catch.
 - **Deck fonts:** PowerPoint can only show Space Grotesk, Inter and IBM Plex Mono if they are installed. The PDF has them embedded. Installing the fonts from `deck/fonts` fixes the PPTX on other machines. Without them PowerPoint substitutes a default font and some text may wrap differently.
 - **Deck screenshots** are 3200×1800 PNGs, so the PPTX is ~10 MB.
-- **Demo link:** slide 6 has a "[URL to be added after publishing]" placeholder because nothing was published.
+- **Demo link:** published on 1 November 2026 at https://maymourad.github.io/airshift/ (public GitHub repo MayMourad/airshift, built and deployed by GitHub Actions). Slide 6 shows the address. Verified: page loads, six sections present, no console errors.
 - **Deadline mismatch to check:** the YPL PDF says "solo or group" and "up to $1,500"; your prompt says solo and $1,500 first place. The deck follows your prompt and the PDF's 5–10 slide, four-component format.
 
 ## 7. Changes made to your machine
