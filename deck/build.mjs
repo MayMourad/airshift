@@ -165,8 +165,10 @@ const bullets = (items, o = {}) => items.map((x) => ({ text: x, options: { bulle
   t(s, bullets(['Cinematic landing page', 'Air Lab (3D)', 'School Air Map + CSV import', 'Intervention Studio ($500 / $1,000 / $1,500)', 'Evidence Lab + report export', 'Global Replication + toolkit'], { gap: 3 }), 9.8, 2.2, 2.8, 2.0, { fontSize: 10, color: C.soft })
   t(s, 'BUILT WITH', 9.8, 4.2, 2.8, 0.25, { fontFace: F.mono, fontSize: 9, color: C.teal, charSpacing: 2 })
   t(s, 'React, TypeScript, Vite, Three.js, Recharts. Offline, no API keys. Keyboard accessible, reduced-motion aware, responsive.', 9.8, 4.47, 2.8, 0.95, { fontSize: 9.5, color: C.soft })
-  card(s, 9.8, 5.6, 2.75, 0.95, { line: C.amber, fill: C.amber, transparency: 90 })
-  t(s, [{ text: 'LIVE DEMO', options: { fontFace: F.mono, fontSize: 8.5, color: C.amber, bold: true, breakLine: true } }, { text: 'maymourad.github.io/airshift', options: { fontFace: F.mono, fontSize: 8.5, color: C.ice } }], 9.92, 5.6, 2.55, 0.95, { valign: 'middle' })
+  card(s, 9.8, 5.42, 2.75, 1.2, { line: C.amber, fill: C.amber, transparency: 90 })
+  t(s, [{ text: 'LIVE DEMO', options: { fontFace: F.mono, fontSize: 8.5, color: C.amber, bold: true, breakLine: true } }, { text: 'maymourad.github.io', options: { fontFace: F.mono, fontSize: 8, color: C.ice, breakLine: true } }, { text: '/airshift', options: { fontFace: F.mono, fontSize: 8, color: C.ice, breakLine: true } }, { text: 'Scan to open', options: { fontFace: F.mono, fontSize: 7, color: C.slate } }], 9.92, 5.42, 1.45, 1.2, { valign: 'middle' })
+  // QR code → https://maymourad.github.io/airshift/#air-lab (made by make-qr.mjs)
+  s.addImage({ path: path.join(here, 'assets', 'qr-prototype.png'), x: 11.4, y: 5.5, w: 1.04, h: 1.04, altText: 'QR code linking to the AIRSHIFT prototype Air Lab: maymourad.github.io/airshift/#air-lab', hyperlink: { url: 'https://maymourad.github.io/airshift/#air-lab', tooltip: 'Open the AIRSHIFT prototype' } })
 }
 
 /* 7 — Project structure */
